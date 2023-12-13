@@ -20,7 +20,7 @@ class Calendar_Activity : AppCompatActivity() {
 
         val icon1 = findViewById<ImageButton>(R.id.btn_temperature)
         icon1.setOnClickListener{
-            val page10 = Intent(applicationContext, Main_Activity::class.java)
+            val page10 = Intent(applicationContext, Temperature_Activity::class.java)
             startActivity(page10)
         }
         val icon2 = findViewById<ImageButton>(R.id.btn_main)
@@ -37,6 +37,11 @@ class Calendar_Activity : AppCompatActivity() {
         icon4.setOnClickListener{
             val page13 = Intent(applicationContext, Personal_Info_Activity::class.java)
             startActivity(page13)
+        }
+        val icon5 = findViewById<ImageButton>(R.id.btn_labor)
+        icon5.setOnClickListener{
+            val laborActivity = Intent(applicationContext, Labor_Activity::class.java)
+            startActivity(laborActivity)
         }
 
         val gridView = findViewById<GridView>(R.id.calendar_grid)

@@ -17,6 +17,12 @@ class Main_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val btn_settings = findViewById<ImageButton>(R.id.btn_settings)
+        btn_settings.setOnClickListener {
+            val settingsActivity = Intent(applicationContext, Settings_Activity::class.java)
+            startActivity(settingsActivity)
+        }
+
         val icon1 = findViewById<ImageButton>(R.id.btn_temperature)
         icon1.setOnClickListener{
             val mainActivity = Intent(applicationContext, Temperature_Activity::class.java)
@@ -37,6 +43,11 @@ class Main_Activity : AppCompatActivity() {
         icon4.setOnClickListener{
             val page13 = Intent(applicationContext, Personal_Info_Activity::class.java)
             startActivity(page13)
+        }
+        val icon5 = findViewById<ImageButton>(R.id.btn_labor)
+        icon5.setOnClickListener{
+            val laborActivity = Intent(applicationContext, Labor_Activity::class.java)
+            startActivity(laborActivity)
         }
 
 

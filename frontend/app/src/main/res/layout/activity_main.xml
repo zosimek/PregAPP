@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,10 +9,27 @@
     android:gravity="center|bottom"
     tools:context=".Main_Activity">
 
+
+        <ImageButton
+            android:id="@+id/btn_settings"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/settings"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="320dp"
-        android:layout_marginBottom="170dp" >
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_settings">
 
         <ImageView
             android:id="@+id/page10_image1"
@@ -30,11 +48,11 @@
             android:layout_alignBottom="@+id/page10_image1"
             android:layout_marginTop="70dp"
             android:layout_marginBottom="1dp"
-            android:gravity="center|top"
             android:fontFamily="@font/roboto"
-            android:textSize="24sp"
+            android:gravity="center|top"
+            android:text="@string/page10_text1"
             android:textColor="@color/color1"
-            android:text="@string/page10_text1" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/page10_text2"
@@ -45,11 +63,11 @@
             android:layout_alignEnd="@+id/page10_image1"
             android:layout_alignBottom="@+id/page10_image1"
             android:layout_margin="1dp"
-            android:gravity="center"
             android:fontFamily="@font/roboto"
-            android:textSize="64sp"
+            android:gravity="center"
+            android:text="@string/page10_text2"
             android:textColor="@color/color1"
-            android:text="@string/page10_text2" />
+            android:textSize="64sp" />
 
         <TextView
             android:id="@+id/page10_text3"
@@ -76,8 +94,8 @@
             android:layout_alignEnd="@+id/page10_image1"
             android:layout_alignBottom="@+id/page10_image1"
             android:layout_marginStart="-33dp"
-            android:layout_marginEnd="-37dp"
             android:layout_marginTop="-54dp"
+            android:layout_marginEnd="-37dp"
             android:layout_marginBottom="-58dp"
             android:indeterminateOnly="false"
             android:progress="5"
@@ -91,13 +109,13 @@
             android:layout_alignTop="@+id/page10_image1"
             android:layout_alignEnd="@+id/page10_image1"
             android:layout_alignBottom="@+id/page10_image1"
-            android:rotation="50"
             android:layout_marginStart="120dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/roboto"
-            android:textSize="15sp"
+            android:rotation="50"
+            android:text="@string/page10_text4"
             android:textColor="@color/gradient_1"
-            android:text="@string/page10_text4" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/page10_text5"
@@ -107,13 +125,13 @@
             android:layout_alignTop="@+id/page10_image1"
             android:layout_alignEnd="@+id/page10_image1"
             android:layout_alignBottom="@+id/page10_image1"
-            android:rotation="-30"
             android:layout_marginStart="190dp"
             android:layout_marginTop="270dp"
             android:fontFamily="@font/roboto"
-            android:textSize="15sp"
+            android:rotation="-30"
+            android:text="@string/page10_text5"
             android:textColor="@color/gradient_2"
-            android:text="@string/page10_text5" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/page10_text6"
@@ -123,60 +141,109 @@
             android:layout_alignTop="@+id/page10_image1"
             android:layout_alignEnd="@+id/page10_image1"
             android:layout_alignBottom="@+id/page10_image1"
-            android:rotation="-45"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="-60dp"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="-59dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="-1dp"
             android:fontFamily="@font/roboto"
-            android:textSize="15sp"
+            android:rotation="-45"
+            android:text="@string/page10_text6"
             android:textColor="@color/gradient_3"
-            android:text="@string/page10_text6" />
+            android:textSize="15sp" />
 
 
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:background="@color/color4"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:paddingVertical="3dp"
-        android:background="@color/color4">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/btn_temperature"
-            android:layout_width="60dp"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@drawable/button_effect2"
-            android:layout_marginHorizontal="15dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_temperature_hover"/>
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/btn_main"
-            android:layout_width="60dp"
+            <ImageButton
+                android:id="@+id/btn_temperature"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_effect2"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu_temperature" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@drawable/button_effect2"
-            android:layout_marginHorizontal="15dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_main"/>
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/btn_calendar"
-            android:layout_width="60dp"
+            <ImageButton
+                android:id="@+id/btn_calendar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_effect2"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu_calendar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@drawable/button_effect2"
-            android:layout_marginHorizontal="15dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_calendar"/>
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/btn_personal_info"
-            android:layout_width="60dp"
+            <ImageButton
+                android:id="@+id/btn_main"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_effect2"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu_main_hover" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@drawable/button_effect2"
-            android:layout_marginHorizontal="15dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_personal_info"/>
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
+            <ImageButton
+                android:id="@+id/btn_labor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_effect2"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu_labor" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_personal_info"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_effect2"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu_personal_info" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 
-class Temperature_Activity : AppCompatActivity() {
+class Labor_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_temperature)
+        setContentView(R.layout.activity_labor)
 
         val icon1 = findViewById<ImageButton>(R.id.btn_temperature)
         icon1.setOnClickListener{

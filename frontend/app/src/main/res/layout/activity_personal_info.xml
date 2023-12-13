@@ -12,46 +12,86 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:background="@color/color4"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:paddingVertical="3dp"
-        android:background="@color/color4">
+        android:paddingVertical="3dp">
 
-        <ImageButton
-            android:id="@+id/btn_temperature"
-            android:layout_width="60dp"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@drawable/button_effect2"
-            android:layout_marginHorizontal="15dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_temperature"/>
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/btn_temperature"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_effect2"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu_temperature" />
+        </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/btn_main"
-            android:layout_width="60dp"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@drawable/button_effect2"
-            android:layout_marginHorizontal="15dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_main"/>
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/btn_calendar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_effect2"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu_calendar" />
+        </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/btn_calendar"
-            android:layout_width="60dp"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@drawable/button_effect2"
-            android:layout_marginHorizontal="15dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_calendar"/>
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/btn_main"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_effect2"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu_main" />
+        </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/btn_personal_info"
-            android:layout_width="60dp"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@drawable/button_effect2"
-            android:layout_marginHorizontal="15dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_personal_info_hover"/>
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/btn_labor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_effect2"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu_labor" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_personal_info"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_effect2"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu_personal_info_hover" />
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

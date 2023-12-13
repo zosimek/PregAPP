@@ -22,6 +22,12 @@
             android:name=".Temperature_Activity"
             android:exported="false" />
         <activity
+            android:name=".Settings_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Labor_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Main_Activity"
             android:exported="false" />
         <activity
