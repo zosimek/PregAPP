@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">PregAPP</string>
+    <string name="toast1">Rejestracja przebiegła pozytywnie</string>
+
+    <string name="page1_text1">Zaloguj się</string>
+    <string name="page1_text2">Załóż konto</string>
+
+    <string name="page2_text1">Rejestracja</string>
+    <string name="page2_text2">Adres Email</string>
+    <string name="page2_text3">Hasło</string>
+    <string name="page2_text4">Powtórz hasło</string>
+
+    <string name="page3_text1">Czy wiesz ile dni trwa twój cykl?</string>
+
+    <string name="page4_text1">Wybierz ile dni trwa twój cykl</string>
+    <string name="page4_text2">OK</string>
+
+    <string name="page5_text1">Czy wiesz ile dni trwa twoja miesiączka?</string>
+
+    <string name="page6_text1">Wybierz ile dni trwa twója miesiączka</string>
+
+    <string name="page7_text1">Czy posiadasz dedykowane urządzenie?</string>
+
+    <string name="page8_text1">Podaj numer urządzenia:</string>
+
+    <string name="page9_text1">Logowanie</string>
+    <string name="page9_text2">Zaloguj</string>
+
+    <string name="page10_text1">okres za</string>
+    <string name="page10_text2">00</string>
+    <string name="page10_text3">dni</string>
+    <string name="page10_text4">Miesiączka</string>
+    <string name="page10_text5">Dni płodne</string>
+    <string name="page10_text6">PMS</string>
+
+</resources>
