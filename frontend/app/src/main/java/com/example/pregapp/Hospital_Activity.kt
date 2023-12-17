@@ -7,21 +7,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 
-class Labor_Activity : AppCompatActivity() {
+class Hospital_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_labor)
+        setContentView(R.layout.activity_hospital)
 
-        val btn_timer = findViewById<Button>(R.id.btn_timer)
-        btn_timer.setOnClickListener{
-            val page10 = Intent(applicationContext, Timer_Activity::class.java)
-            startActivity(page10)
-        }
-        val btn_hospital = findViewById<Button>(R.id.btn_hospital)
-        btn_hospital.setOnClickListener{
-            val page10 = Intent(applicationContext, Hospital_Activity::class.java)
-            startActivity(page10)
-        }
 
         val icon1 = findViewById<ImageButton>(R.id.btn_temperature)
         icon1.setOnClickListener{
@@ -45,7 +35,7 @@ class Labor_Activity : AppCompatActivity() {
         }
         val icon5 = findViewById<ImageButton>(R.id.btn_labor)
         icon5.setOnClickListener{
-            val laborActivity = Intent(applicationContext, Labor_Activity::class.java)
+            val laborActivity = Intent(applicationContext, Hospital_Activity::class.java)
             startActivity(laborActivity)
         }
     }

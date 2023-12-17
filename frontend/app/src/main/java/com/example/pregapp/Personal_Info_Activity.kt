@@ -31,6 +31,11 @@ class Personal_Info_Activity : AppCompatActivity() {
             val page13 = Intent(applicationContext, Personal_Info_Activity::class.java)
             startActivity(page13)
         }
+        val btn_labor = findViewById<ImageButton>(R.id.btn_labor)
+        btn_labor.setOnClickListener{
+            val page13 = Intent(applicationContext, Labor_Activity::class.java)
+            startActivity(page13)
+        }
     }
 
     @SuppressLint("MissingSuperCall")

@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/labor_alert_box" /> <!-- Kolor tła -->
+    <corners android:radius="10dp" />
+    <stroke
+        android:color="@color/labor_alert_outline"
+    android:width="3dp" />
+</shape>

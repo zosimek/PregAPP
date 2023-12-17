@@ -23,29 +23,29 @@ class Main_Activity : AppCompatActivity() {
             startActivity(settingsActivity)
         }
 
-        val icon1 = findViewById<ImageButton>(R.id.btn_temperature)
-        icon1.setOnClickListener{
+        val btn_temperature = findViewById<ImageButton>(R.id.btn_temperature)
+        btn_temperature.setOnClickListener{
             val mainActivity = Intent(applicationContext, Temperature_Activity::class.java)
             startActivity(mainActivity)
         }
 
-        val icon2 = findViewById<ImageButton>(R.id.btn_main)
-        icon2.setOnClickListener{
+        val btn_main = findViewById<ImageButton>(R.id.btn_main)
+        btn_main.setOnClickListener{
             val mainActivity = Intent(applicationContext, Main_Activity::class.java)
             startActivity(mainActivity)
         }
-        val icon3 = findViewById<ImageButton>(R.id.btn_calendar)
-        icon3.setOnClickListener{
+        val btn_calendar = findViewById<ImageButton>(R.id.btn_calendar)
+        btn_calendar.setOnClickListener{
             val page12 = Intent(applicationContext, Calendar_Activity::class.java)
             startActivity(page12)
         }
-        val icon4 = findViewById<ImageButton>(R.id.btn_personal_info)
-        icon4.setOnClickListener{
+        val btn_personal_info = findViewById<ImageButton>(R.id.btn_personal_info)
+        btn_personal_info.setOnClickListener{
             val page13 = Intent(applicationContext, Personal_Info_Activity::class.java)
             startActivity(page13)
         }
-        val icon5 = findViewById<ImageButton>(R.id.btn_labor)
-        icon5.setOnClickListener{
+        val btn_labor = findViewById<ImageButton>(R.id.btn_labor)
+        btn_labor.setOnClickListener{
             val laborActivity = Intent(applicationContext, Labor_Activity::class.java)
             startActivity(laborActivity)
         }

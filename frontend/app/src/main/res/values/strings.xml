@@ -2,35 +2,50 @@
     <string name="app_name">PregAPP</string>
     <string name="toast1">Rejestracja przebiegła pozytywnie</string>
 
+    <!-- login/register cpage-->
     <string name="page1_text1">Zaloguj się</string>
     <string name="page1_text2">Załóż konto</string>
 
+    <!-- personal info registration page page-->
     <string name="page2_text1">Rejestracja</string>
     <string name="page2_text2">Adres Email</string>
     <string name="page2_text3">Hasło</string>
     <string name="page2_text4">Powtórz hasło</string>
 
+    <!-- cycle/device info pages-->
     <string name="page3_text1">Czy wiesz ile dni trwa twój cykl?</string>
-
     <string name="page4_text1">Wybierz ile dni trwa twój cykl</string>
     <string name="page4_text2">OK</string>
-
     <string name="page5_text1">Czy wiesz ile dni trwa twoja miesiączka?</string>
-
     <string name="page6_text1">Wybierz ile dni trwa twója miesiączka</string>
-
     <string name="page7_text1">Czy posiadasz dedykowane urządzenie?</string>
-
     <string name="page8_text1">Podaj numer urządzenia:</string>
 
+    <!-- login page-->
     <string name="page9_text1">Logowanie</string>
     <string name="page9_text2">Zaloguj</string>
 
+    <!-- main page-->
     <string name="page10_text1">okres za</string>
     <string name="page10_text2">00</string>
     <string name="page10_text3">dni</string>
     <string name="page10_text4">Miesiączka</string>
     <string name="page10_text5">Dni płodne</string>
     <string name="page10_text6">PMS</string>
+
+    <!-- pregnancy page -->
+    <string name="labor_page_top_info">Aby zapewnić prawidłowy przyrost wagi, limit kaloryczny wynosi</string>
+    <string name="labor_page_trymestr_1">Trymestr 1:</string>
+    <string name="labor_page_trymestr_2">Trymestr 2:</string>
+    <string name="labor_page_trymestr_3">Trymestr 3:</string>
+    <string name="labor_page_kcal"> kcal</string>
+    <string name="labor_page_timer_btn">czasomierz skurczy</string>
+    <string name="labor_page_hospital_btn">najbliższy szpital</string>
+
+    <!-- timer page -->
+    <string name="timer_btn_01">SKURCZ</string>
+    <string name="timer_btn_02">rozpoczął się</string>
+    <string name="timer_start_info">Monitoruj skurcze i aplikacja poinformuje Cię, czy czas udać się do szpitala.</string>
+    <string name="timer_start_alert">Jeśli odejdą Ci wody lub zaczniesz silnie krwawić należy natychmiast udać się do szpitala!</string>
 
 </resources>

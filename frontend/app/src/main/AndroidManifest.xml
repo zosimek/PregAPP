@@ -28,6 +28,12 @@
             android:name=".Labor_Activity"
             android:exported="false" />
         <activity
+            android:name=".Timer_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Hospital_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Main_Activity"
             android:exported="false" />
         <activity
