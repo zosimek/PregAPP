@@ -1,21 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_01"
     android:orientation="vertical"
-    android:gravity="center|bottom"
-    tools:context=".Personal_Info_Activity">
-
+    android:gravity="center|bottom">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/page14_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/txt_personal_info_username"
+            android:textColor="@color/color2"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/page14_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/txt_personal_info_mail"
+            android:textColor="@color/color2"
+            android:textSize="22sp" />
+
+        <View
+            android:id="@+id/page14_line1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="5dp"
+            android:background="@color/color2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center|start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/page14_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_sex"
+                android:textColor="@color/color2"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/page14_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_sex"
+                android:textColor="@color/color2"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center|start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/page14_text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_age"
+                android:textColor="@color/color2"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/page14_text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_age"
+                android:textColor="@color/color2"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center|start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/page14_text7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_weight"
+                android:textColor="@color/color2"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/page14_text8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_weight"
+                android:textColor="@color/color2"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center|start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/page14_text9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_hight"
+                android:textColor="@color/color2"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/page14_text10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_hight"
+                android:textColor="@color/color2"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center|start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/page14_text11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_activity"
+                android:textColor="@color/color2"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/page14_text12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_activity"
+                android:textColor="@color/color2"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/page14_button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/button_effect1"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_keep_changes"
+                android:textColor="@color/color1"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/page14_button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/button_effect1"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txt_personal_info_log_out"
+                android:textColor="@color/color1"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color4"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:paddingVertical="3dp">
+        android:paddingVertical="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -23,6 +240,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
+
             <ImageButton
                 android:id="@+id/btn_temperature"
                 android:layout_width="60dp"
@@ -38,6 +256,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
+
             <ImageButton
                 android:id="@+id/btn_calendar"
                 android:layout_width="60dp"
@@ -53,6 +272,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
+
             <ImageButton
                 android:id="@+id/btn_main"
                 android:layout_width="60dp"
@@ -68,6 +288,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
+
             <ImageButton
                 android:id="@+id/btn_labor"
                 android:layout_width="60dp"
@@ -94,4 +315,4 @@
         </LinearLayout>
 
     </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

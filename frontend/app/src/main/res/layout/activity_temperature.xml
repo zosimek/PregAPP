@@ -8,6 +8,51 @@
     android:gravity="center|bottom"
     tools:context=".Personal_Info_Activity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginVertical="200dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_measurements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_effect1"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/color1"
+            android:textSize="18sp"
+            android:text="@string/device_page_btn_01" />
+
+        <Button
+            android:id="@+id/btn_data_graph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_effect1"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/color1"
+            android:textSize="18sp"
+            android:text="@string/device_page_btn_02" />
+
+        <Button
+            android:id="@+id/btn_authorised_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_effect1"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/color1"
+            android:textSize="18sp"
+            android:text="@string/device_page_btn_03" />
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"

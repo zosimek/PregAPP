@@ -3,12 +3,14 @@ package com.example.pregapp
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.GridView
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Locale
 
 private var arrayList: ArrayList<CalendarItem>? = null
 private var calendarAdapter: CalendarAdapter? = null
@@ -44,95 +46,155 @@ class Calendar_Activity : AppCompatActivity() {
             startActivity(laborActivity)
         }
 
-        val gridView = findViewById<GridView>(R.id.calendar_grid)
-        arrayList = ArrayList()
-        arrayList = setDataList()
-        calendarAdapter = CalendarAdapter(applicationContext, arrayList!!)
-        gridView.adapter = calendarAdapter
-
-        addTime()
-    }
-
-    private fun addTime() {
         val currentDate = Calendar.getInstance()
-        val year = currentDate.get(Calendar.YEAR)
-        val month = currentDate.get(Calendar.MONTH)
+        var year = currentDate.get(Calendar.YEAR)
+        var month = currentDate.get(Calendar.MONTH)
         val day = currentDate.get(Calendar.DAY_OF_MONTH)
-        val dayName = currentDate.get(Calendar.DAY_OF_WEEK)
+        val dayName = currentDate.get(Calendar.DAY_OF_WEEK) - 1
+        val previous = findViewById<ImageButton>(R.id.date_previous)
+        val next = findViewById<ImageButton>(R.id.date_next)
+        val yearCheck = currentDate.get(Calendar.YEAR)
+        val monthCheck = currentDate.get(Calendar.MONTH)
+
         val yearValue = findViewById<TextView>(R.id.date_display_year)
         val monthValue = findViewById<TextView>(R.id.date_display_month)
         val dayValue = findViewById<TextView>(R.id.date_display_day)
-        val dayNameValue = findViewById<TextView>(R.id.date_display_dayname)
+        val dayNameValue = findViewById<Button>(R.id.date_display_dayname)
 
         yearValue.text = year.toString()
         monthValue.text = nameOfMonth()[month]
         dayValue.text = day.toString()
         dayNameValue.text = dayOfWeek()[dayName]
+        val gridView = findViewById<GridView>(R.id.calendar_grid)
+
+        val fromDateCheck = if(monthCheck+1 < 10) "01/0${monthCheck+1}/$yearCheck"
+        else "01/${monthCheck+1}/$yearCheck"
+        var fromDate = if(month+1 < 10) "01/0${month+1}/$year"
+        else "01/${month+1}/$year"
+        arrayList = setDataList(fromDate, currentDate, month, year)
+        calendarAdapter = CalendarAdapter(applicationContext, arrayList!!)
+        gridView.adapter = calendarAdapter
+
+        previous.setOnClickListener{
+            if (month == 0) {
+                month = 12
+                year -= 1
+            }
+            month -= 1
+            monthValue.text = nameOfMonth()[month]
+            yearValue.text = year.toString()
+            fromDate = if(month+1 < 10) "01/0${month+1}/$year"
+            else "01/${month+1}/$year"
+
+            arrayList = setDataList(fromDate, currentDate, month, year)
+            calendarAdapter = CalendarAdapter(applicationContext, arrayList!!)
+            gridView.adapter = calendarAdapter
+
+            BackButton(fromDate, fromDateCheck, dayName)
+        }
+        next.setOnClickListener{
+            if (month == 11) {
+                month = -1
+                year += 1
+            }
+            month += 1
+            monthValue.text = nameOfMonth()[month]
+            yearValue.text = year.toString()
+            fromDate = if(month+1 < 10) "01/0${month+1}/$year"
+            else "01/${month+1}/$year"
+            arrayList = setDataList(fromDate, currentDate, month, year)
+            calendarAdapter = CalendarAdapter(applicationContext, arrayList!!)
+            gridView.adapter = calendarAdapter
+
+            BackButton(fromDate, fromDateCheck, dayName)
+        }
+        dayNameValue.setOnClickListener {
+            year = yearCheck
+            month = monthCheck
+            monthValue.text = nameOfMonth()[month]
+            yearValue.text = year.toString()
+            fromDate = if(month+1 < 10) "01/0${month+1}/$year"
+            else "01/${month+1}/$year"
+            arrayList = setDataList(fromDate, currentDate, month, year)
+            calendarAdapter = CalendarAdapter(applicationContext, arrayList!!)
+            gridView.adapter = calendarAdapter
+
+            BackButton(fromDate, fromDateCheck, dayName)
+        }
     }
 
-    private fun setDataList(): ArrayList<CalendarItem>? {
-        val currentDate = Calendar.getInstance()
-        val year = currentDate.get(Calendar.YEAR)
-        val month = currentDate.get(Calendar.MONTH) + 1
-        val fromDate = if(month < 10) "01/0$month/$year"
-        else "01/$month/$year"
+    private fun BackButton(fromDate: String, fromDateCheck: String, dayName: Int) {
+        val dayNameValue = findViewById<Button>(R.id.date_display_dayname)
+        dayNameValue.isEnabled = true
+        if (fromDate != fromDateCheck) {
+            dayNameValue.text = "Powrót"
+            dayNameValue.setBackgroundResource(R.drawable.button_effect2)
+            dayNameValue.setTextColor(resources.getColor(R.color.white))
+        } else {
+            dayNameValue.isEnabled = false
+            dayNameValue.text = dayOfWeek()[dayName]
+            dayNameValue.setBackgroundResource(R.drawable.button_effect3)
+            dayNameValue.setTextColor(resources.getColor(R.color.black))
+        }
+    }
 
-        val sdf = SimpleDateFormat("dd/MM/yyyy", java.util.Locale.ENGLISH)
-        val date= sdf.parse(fromDate)
+    private fun setDataList(fromDate: String, currentDate: Calendar, month: Int, year: Int): ArrayList<CalendarItem> {
+        val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
+        val date = sdf.parse(fromDate)
         sdf.applyPattern("EEE")
         val str = date?.let { sdf.format(it) }
         val arrayList: ArrayList<CalendarItem> = ArrayList()
 
         if(str == "Mon") {
-            for (i in 1..31) {
+            for (i in 1..daysInMonth(currentDate, month, year)) {
                 arrayList.add(CalendarItem(i))
             }
         }
-        if(str == "Tue") {
+        else if(str == "Tue") {
             for (i in 1..1) {
                 arrayList.add(CalendarItem(0))
             }
-            for (i in 1..31) {
+            for (i in 1..daysInMonth(currentDate, month, year)) {
                 arrayList.add(CalendarItem(i))
             }
         }
-        if(str == "Wen") {
+        else if(str == "Wed") {
             for (i in 1..2) {
                 arrayList.add(CalendarItem(0))
             }
-            for (i in 1..31) {
+            for (i in 1..daysInMonth(currentDate, month, year)) {
                 arrayList.add(CalendarItem(i))
             }
         }
-        if(str == "Thu") {
+        else if(str == "Thu") {
             for (i in 1..3) {
                 arrayList.add(CalendarItem(0))
             }
-            for (i in 1..31) {
+            for (i in 1..daysInMonth(currentDate, month, year)) {
                 arrayList.add(CalendarItem(i))
             }
         }
-        if(str == "Fri") {
+        else if(str == "Fri") {
             for (i in 1..4) {
                 arrayList.add(CalendarItem(0))
             }
-            for (i in 1..31) {
+            for (i in 1..daysInMonth(currentDate, month, year)) {
                 arrayList.add(CalendarItem(i))
             }
         }
-        if(str == "Sat") {
+        else if(str == "Sat") {
             for (i in 1..5) {
                 arrayList.add(CalendarItem(0))
             }
-            for (i in 1..31) {
+            for (i in 1..daysInMonth(currentDate, month, year)) {
                 arrayList.add(CalendarItem(i))
             }
         }
-        if(str == "Sun") {
+        else {
             for (i in 1..6) {
                 arrayList.add(CalendarItem(0))
             }
-            for (i in 1..31) {
+            for (i in 1..daysInMonth(currentDate, month, year)) {
                 arrayList.add(CalendarItem(i))
             }
         }
@@ -140,15 +202,21 @@ class Calendar_Activity : AppCompatActivity() {
         return arrayList
     }
 
+    private fun daysInMonth(currentDate: Calendar, month: Int, year: Int): Int {
+        currentDate.set(Calendar.MONTH, month)
+        currentDate.set(Calendar.YEAR, year)
+        return currentDate.getActualMaximum(Calendar.DAY_OF_MONTH)
+    }
+
     private fun dayOfWeek(): ArrayList<String> {
         val dayName: ArrayList<String> = ArrayList()
+        dayName.add("Niedziela")
         dayName.add("Poniedziałek")
         dayName.add("Wtorek")
         dayName.add("Środa")
         dayName.add("Czwartek")
         dayName.add("Piątek")
         dayName.add("Sobota")
-        dayName.add("Niedziela")
         return dayName
     }
 

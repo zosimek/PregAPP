@@ -20,9 +20,18 @@ class CalendarAdapter(var context: Context, private var arrayList:ArrayList<Cale
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view: View = View.inflate(context, R.layout.calendar_row, null)
-        val numbers: TextView = view.findViewById(R.id.date_text)
         val calendarItem: CalendarItem = arrayList[position]
+        val view: View
+        val numbers: TextView
+
+        if(calendarItem.number.toString() == "0") {
+            view = View.inflate(context, R.layout.calendar_row2, null)
+            numbers = view.findViewById(R.id.date_text)
+        } else {
+            view = View.inflate(context, R.layout.calendar_row1, null)
+            numbers = view.findViewById(R.id.date_text)
+        }
+
         numbers.text = calendarItem.number.toString()
         return view
     }

@@ -33,4 +33,32 @@
     <string name="page10_text5">Dni płodne</string>
     <string name="page10_text6">PMS</string>
 
+    <string name="device_page_btn_01">POMIAR</string>
+    <string name="device_page_btn_02">MONITOROWANIE CYKLUA</string>
+    <string name="device_page_btn_03">OSOBU UPOWAŻNIONE</string>
+
+    <string name="measurements_page_btn_01">POMIAR TEMPERATURY</string>
+    <string name="measurements_page_btn_02">POMIAR CIŚNIENIA I SATURACJI</string>
+    <string name="measurements_page_btn_03">WYKRES POMIARÓW</string>
+
+    <string name="measure_temperature_text">1. Włącz urządzenie\n2. Przyłóż urządzenie do czoła\n3. Naciśnij przycisk na urządzeniu\n4. Poczekaj 10 sekund\n5. Sprawdź wartość pomiaru
+      na urządzeniu</string>
+
+    <string name="measure_saturation_text">1. Włącz urządzenie\n2. Przyłóż palec na wskazane miejsce\n3. Naciśnij przycisk na urządzeniu\n4. Poczekaj 10 sekund\n5. Sprawdź wartość pomiaru
+      na urządzeniu</string>
+
+    <string name="data_graph_btn_01">TEMPERATURA</string>
+    <string name="data_graph_btn_02">CIŚNIENIE</string>
+    <string name="data_graph_btn_03">SATURACJA</string>
+
+    <string name="txt_personal_info_log_out">WYLOGÓJ SIĘ</string>
+    <string name="txt_personal_info_keep_changes">ZMIANA DANYCH</string>
+    <string name="txt_personal_info_activity">Poziom aktywności</string>
+    <string name="txt_personal_info_hight">Wzrost</string>
+    <string name="txt_personal_info_weight">Waga</string>
+    <string name="txt_personal_info_age">Wiek</string>
+    <string name="txt_personal_info_sex">Płeć</string>
+    <string name="txt_personal_info_mail">Mail</string>
+    <string name="txt_personal_info_username">Username</string>
+
 </resources>

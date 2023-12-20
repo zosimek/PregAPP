@@ -4,31 +4,12 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 
-class Temperature_Activity : AppCompatActivity() {
+class Measure_Temperature_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_temperature)
-
-
-        val btn_measurements = findViewById<Button>(R.id.btn_measurements)
-        btn_measurements.setOnClickListener {
-            val measurements_page = Intent(applicationContext, Measurements_Activity::class.java)
-            startActivity(measurements_page)
-        }
-        val btn_data_graph = findViewById<Button>(R.id.btn_data_graph)
-        btn_data_graph.setOnClickListener {
-            val data_graph_page = Intent(applicationContext, Data_Graph_Activity::class.java)
-            startActivity(data_graph_page)
-        }
-        val btn_authorised_person = findViewById<Button>(R.id.btn_authorised_person)
-        btn_authorised_person.setOnClickListener {
-            val authorised_person_page = Intent(applicationContext, Authorised_Person_Activity::class.java)
-            startActivity(authorised_person_page)
-        }
-
+        setContentView(R.layout.activity_measure_temperature)
 
         val icon1 = findViewById<ImageButton>(R.id.btn_temperature)
         icon1.setOnClickListener{
